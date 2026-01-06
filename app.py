@@ -92,7 +92,7 @@ st.caption("Output strictly follows the order of the uploaded Excel file.")
 
 # Uploaders
 excel_file = st.file_uploader("1. Upload Excel File", type=['xlsx', 'xls'])
-pdf_files = st.file_uploader("2. Upload PDFs", type=['pdf'], accept_multiple_files=True)
+pdf_files = st.file_uploader("2. Upload PDFs (Unlimited)", type=['pdf'], accept_multiple_files=True)
 
 if excel_file and pdf_files and st.button("Generate Ordered Report"):
     
@@ -163,4 +163,5 @@ if excel_file and pdf_files and st.button("Generate Ordered Report"):
         final_df = pd.DataFrame(results)
         st.success("Processing Complete!")
         st.dataframe(final_df)
+
         st.info("Row order matches your Excel file exactly. Copy-paste safely.")
